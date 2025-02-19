@@ -3,7 +3,7 @@ services:
     $$cap_appname:
         caproverExtra:
             containerHttpPort: $$cap_OPENVPN_PORT_ADMIN
-        image: linuxserver/openvpn-as:$$cap_OPENVPN_VERSION
+        image: openvpn/openvpn-as:$$cap_OPENVPN_VERSION
         hostname: $$cap_appname.$$cap_root_domain
         environment:
             PUID: $$cap_OPENVPN_PUID
@@ -55,8 +55,8 @@ caproverOneClickApp:
     variables:
         - id: $$cap_OPENVPN_VERSION
           label: General | Version Tag
-          description: Check out their valid tags at https://hub.docker.com/r/linuxserver/openvpn-as/tags
-          defaultValue: 2.9.0-5c5bd120-Ubuntu18-ls124
+          description: Check out their valid tags at https://hub.docker.com/r/openvpn/openvpn-as/tags
+          defaultValue: 2.14.1-ff013d4d-Ubuntu22
           validRegex: /.{1,}/
         - id: $$cap_OPENVPN_TZ
           label: General | Timezone
